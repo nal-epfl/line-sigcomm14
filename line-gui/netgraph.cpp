@@ -1303,8 +1303,8 @@ void NetGraph::flattenConnections()
             newConnections << connections[c];
             newConnections.last().index = connections.count() + newConnections.count() - 1;
             newConnections.last().multiplier = 1;
-            connections[c].multiplier = 1;
         }
+		connections[c].multiplier = 1;
     }
     connections.append(newConnections);
 }
