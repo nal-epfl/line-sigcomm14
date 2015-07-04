@@ -1881,7 +1881,7 @@ void CustomControls::on_btnAutoDcWebFile_clicked()
                                        << QStringQuad("1Mb x 1 + 10Mb x 1 + 40Mb x 1", "file-transfer x 1", "", "")
                                        << QStringQuad("1Mb x 1 + 10Mb x 1 + 40Mb x 1", "file-transfer x 1",
                                                       "1Mb x 4 + 10Mb x 2 + 40Mb x 1 + file-transfer x 1", "file-transfer x 1")
-                                                ;
+												;
     QList<QInt32List> nonNeutralLinkValues = QList<QInt32List>()
                                              << (QInt32List())
                                              << (QInt32List() << 5 << 14 << 20);
@@ -1892,15 +1892,292 @@ void CustomControls::on_btnAutoDcWebFile_clicked()
 void CustomControls::on_btnAutoDdWebVideo_clicked()
 {
     QList<QStringQuad> trafficValues = QList<QStringQuad>()
-                                       //<< QStringQuad("1Mb x 1 + 10Mb x 1 + 40Mb x 1", "dash-video 2Mbps x 1", "", "")
-                                       //<< QStringQuad("1Mb x 30 + 10Mb x 10 + 40Mb x 4", "dash-video 2Mbps x 1", "", "")
-                                       //<< QStringQuad("9999Mb x 1", "dash-video 2Mbps x 1", "", "")
-                                       //<< QStringQuad("dash-video 2Mbps x 1", "dash-video 2Mbps x 1", "", "")
-                                       << QStringQuad("dash-video 2Mbps x 5", "dash-video 2Mbps x 5", "file-transfer", "file-transfer")
-                                          ;
+									   //<< QStringQuad("1Mb x 1 + 10Mb x 1 + 40Mb x 1", "dash-video 2Mbps x 1", "", "")
+									   //<< QStringQuad("1Mb x 30 + 10Mb x 10 + 40Mb x 4", "dash-video 2Mbps x 1", "", "")
+									   //<< QStringQuad("9999Mb x 1", "dash-video 2Mbps x 1", "", "")
+									   //<< QStringQuad("dash-video 2Mbps x 1", "dash-video 2Mbps x 1", "", "")
+									   << QStringQuad("dash-video 2Mbps x 5", "dash-video 2Mbps x 5", "file-transfer", "file-transfer")
+										  ;
     QList<QInt32List> nonNeutralLinkValues = QList<QInt32List>()
                                              //<< (QInt32List())
                                              << (QInt32List() << 5 << 14 << 20);
 
     autoDGenerate(trafficValues, nonNeutralLinkValues, "Dd");
+}
+
+void CustomControls::loadGraph(QString name)
+{
+	for (int i = 0; i < mainWindow->ui->cmbTopologies->count(); i++) {
+		if (mainWindow->ui->cmbTopologies->itemText(i) == name) {
+			mainWindow->ui->cmbTopologies->setCurrentIndex(i);
+			break;
+		}
+	}
+	QApplication::processEvents();
+	Q_ASSERT_FORCE(mainWindow->ui->cmbTopologies->currentText() == name);
+}
+
+void CustomControls::on_btnSigcomm7a_clicked()
+{
+	loadGraph("quad");
+	mainWindow->ui->txtIntervalSize->setText("50ms");
+	QApplication::processEvents();
+
+	int duration = 600; // seconds
+
+	QList<QStringRealRealRealRealTuple> qosValues;
+	qosValues << QStringRealRealRealRealTuple("neutral", 0, 0, 0, 0);
+
+	QList<QStringPair> tcpValues;
+	tcpValues << QStringPair("cubic", "cubic");
+
+	QList<QStringRealStringStringTuple> buffersScalingQosScalingQdiscValues;
+	buffersScalingQosScalingQdiscValues << QStringRealStringStringTuple("large", 1.0, "none", "drop-tail");
+
+	QList<QInt32Pair> rttValues;
+	rttValues << QInt32Pair(50, 50);
+
+	QList<QRealStringRealStringTuple> sizeCongestionValues = QList<QRealStringRealStringTuple>()
+															 << QRealStringRealStringTuple(1, "light", 1, "light")
+															 << QRealStringRealStringTuple(1, "light", 10, "light")
+															 << QRealStringRealStringTuple(1, "light", 40, "light")
+															 << QRealStringRealStringTuple(1, "light", 9999, "light");
+
+	autoGenerate(tcpValues,
+				 buffersScalingQosScalingQdiscValues,
+				 rttValues,
+				 sizeCongestionValues,
+				 qosValues,
+				 "7a",
+				 "transfer-size",
+				 duration);
+}
+
+void CustomControls::on_btnSigcomm7b_clicked()
+{
+	loadGraph("quad");
+	mainWindow->ui->txtIntervalSize->setText("50ms");
+	QApplication::processEvents();
+
+	int duration = 600; // seconds
+
+	QList<QStringRealRealRealRealTuple> qosValues;
+	qosValues << QStringRealRealRealRealTuple("neutral", 0, 0, 0, 0);
+
+	QList<QStringPair> tcpValues;
+	tcpValues << QStringPair("cubic", "cubic");
+
+	QList<QStringRealStringStringTuple> buffersScalingQosScalingQdiscValues;
+	buffersScalingQosScalingQdiscValues << QStringRealStringStringTuple("large", 1.0, "none", "drop-tail");
+
+	QList<QRealStringRealStringTuple> sizeCongestionValues = QList<QRealStringRealStringTuple>()
+															 << QRealStringRealStringTuple(10, "light", 10, "light");
+
+	QList<QInt32Pair> rttValues = QList<QInt32Pair>()
+								  << QInt32Pair(50, 50)
+								  << QInt32Pair(50, 80)
+								  << QInt32Pair(50, 120)
+								  << QInt32Pair(50, 200);
+
+	autoGenerate(tcpValues,
+				 buffersScalingQosScalingQdiscValues,
+				 rttValues,
+				 sizeCongestionValues,
+				 qosValues,
+				 "7b",
+				 "rtt",
+				 duration);
+}
+
+void CustomControls::on_btnSigcomm7c_clicked()
+{
+	loadGraph("quad");
+	mainWindow->ui->txtIntervalSize->setText("50ms");
+	QApplication::processEvents();
+
+	int duration = 600; // seconds
+
+	QList<QStringRealRealRealRealTuple> qosValues;
+	qosValues << QStringRealRealRealRealTuple("neutral", 0, 0, 0, 0);
+
+	QList<QStringPair> tcpValues;
+
+	QList<QStringRealStringStringTuple> buffersScalingQosScalingQdiscValues;
+	buffersScalingQosScalingQdiscValues << QStringRealStringStringTuple("large", 1.0, "none", "drop-tail");
+
+	QList<QRealStringRealStringTuple> sizeCongestionValues;
+
+	QList<QInt32Pair> rttValues = QList<QInt32Pair>()
+								  << QInt32Pair(50, 50);
+
+	// Left side:
+	tcpValues = QList<QStringPair>()
+				<< QStringPair("cubic", "cubic");
+	// Note: in the paper we used 1 vs 10 by mistake
+	sizeCongestionValues = QList<QRealStringRealStringTuple>()
+						   << QRealStringRealStringTuple(10, "light", 10, "light");
+	autoGenerate(tcpValues,
+				 buffersScalingQosScalingQdiscValues,
+				 rttValues,
+				 sizeCongestionValues,
+				 qosValues,
+				 "7c",
+				 "congestion",
+				 duration);
+
+	// Right side:
+	tcpValues = QList<QStringPair>()
+				<< QStringPair("cubic", "reno");
+	sizeCongestionValues = QList<QRealStringRealStringTuple>()
+						   << QRealStringRealStringTuple(10, "light", 10, "light");
+	autoGenerate(tcpValues,
+				 buffersScalingQosScalingQdiscValues,
+				 rttValues,
+				 sizeCongestionValues,
+				 qosValues,
+				 "7c",
+				 "congestion",
+				 duration);
+}
+
+void CustomControls::on_btnSigcomm7d_clicked()
+{
+	loadGraph("quad");
+	mainWindow->ui->txtIntervalSize->setText("50ms");
+	QApplication::processEvents();
+
+	int duration = 600; // seconds
+
+	QList<QStringRealRealRealRealTuple> qosValues;
+	QList<QStringPair> tcpValues;
+	QList<QStringRealStringStringTuple> buffersScalingQosScalingQdiscValues;
+
+	qosValues = QList<QStringRealRealRealRealTuple>()
+				<< QStringRealRealRealRealTuple("policing", 1.0, 0.3, 0, 0);
+
+	tcpValues = QList<QStringPair>()
+				<< QStringPair("cubic", "cubic");
+
+	buffersScalingQosScalingQdiscValues = QList<QStringRealStringStringTuple>()
+										  << QStringRealStringStringTuple("large", 1.0, "none", "drop-tail");
+
+	QList<QInt32Pair> rttValues = QList<QInt32Pair>()
+								  << QInt32Pair(50, 50);
+
+	QList<QRealStringRealStringTuple> sizeCongestionValues = QList<QRealStringRealStringTuple>()
+															 << QRealStringRealStringTuple(1, "light", 1, "light")
+															 << QRealStringRealStringTuple(10, "light", 10, "light")
+															 << QRealStringRealStringTuple(40, "light", 40, "light")
+															 << QRealStringRealStringTuple(9999, "light", 9999, "light");
+
+	autoGenerate(tcpValues,
+				 buffersScalingQosScalingQdiscValues,
+				 rttValues,
+				 sizeCongestionValues,
+				 qosValues,
+				 "7d",
+				 "transfer-size",
+				 duration);
+}
+
+void CustomControls::on_btnSigcomm7e_clicked()
+{
+	loadGraph("quad");
+	mainWindow->ui->txtIntervalSize->setText("50ms");
+	QApplication::processEvents();
+
+	int duration = 600; // seconds
+
+	QList<QStringRealRealRealRealTuple> qosValues;
+	QList<QStringPair> tcpValues;
+	QList<QStringRealStringStringTuple> buffersScalingQosScalingQdiscValues;
+
+	qosValues = QList<QStringRealRealRealRealTuple>()
+				<< QStringRealRealRealRealTuple("policing", 1.0, 0.3, 0, 0);
+
+	tcpValues = QList<QStringPair>()
+				<< QStringPair("cubic", "cubic");
+
+	buffersScalingQosScalingQdiscValues = QList<QStringRealStringStringTuple>()
+										  << QStringRealStringStringTuple("large", 1.0, "none", "drop-tail");
+
+	QList<QRealStringRealStringTuple> sizeCongestionValues = QList<QRealStringRealStringTuple>()
+															 << QRealStringRealStringTuple(10, "light", 10, "light");
+
+	QList<QInt32Pair> rttValues = QList<QInt32Pair>()
+								  << QInt32Pair(50, 50)
+								  << QInt32Pair(80, 80)
+								  << QInt32Pair(120, 120)
+								  << QInt32Pair(200, 200);
+
+	autoGenerate(tcpValues,
+				 buffersScalingQosScalingQdiscValues,
+				 rttValues,
+				 sizeCongestionValues,
+				 qosValues,
+				 "7e",
+				 "rtt",
+				 duration);
+}
+
+void CustomControls::on_btnSigcomm7f_clicked()
+{
+	loadGraph("quad");
+	mainWindow->ui->txtIntervalSize->setText("50ms");
+	QApplication::processEvents();
+
+	int duration = 600; // seconds
+
+	QList<QStringRealRealRealRealTuple> qosValues;
+	QList<QStringPair> tcpValues;
+	QList<QStringRealStringStringTuple> buffersScalingQosScalingQdiscValues;
+
+	tcpValues = QList<QStringPair>()
+				<< QStringPair("cubic", "cubic");
+
+	buffersScalingQosScalingQdiscValues = QList<QStringRealStringStringTuple>()
+										  << QStringRealStringStringTuple("large", 1.0, "none", "drop-tail");
+
+	QList<QRealStringRealStringTuple> sizeCongestionValues = QList<QRealStringRealStringTuple>()
+															 << QRealStringRealStringTuple(10, "light", 10, "light");
+
+	QList<QInt32Pair> rttValues = QList<QInt32Pair>()
+								  << QInt32Pair(50, 50);
+
+	qosValues = QList<QStringRealRealRealRealTuple>()
+				<< QStringRealRealRealRealTuple("policing", 1.0, 0.5, 0, 0)
+				<< QStringRealRealRealRealTuple("policing", 1.0, 0.4, 0, 0)
+				<< QStringRealRealRealRealTuple("policing", 1.0, 0.3, 0, 0)
+				<< QStringRealRealRealRealTuple("policing", 1.0, 0.2, 0, 0);
+
+	autoGenerate(tcpValues,
+				 buffersScalingQosScalingQdiscValues,
+				 rttValues,
+				 sizeCongestionValues,
+				 qosValues,
+				 "7f",
+				 "qos",
+				 duration);
+}
+
+void CustomControls::on_btnSigcomm8ab_clicked()
+{
+	int duration = 600; // seconds
+
+	loadGraph("pegasus");
+	mainWindow->ui->txtGenericTimeout->setText(QString("%1s").arg(duration));
+	mainWindow->ui->txtIntervalSize->setText("100ms");
+	QApplication::processEvents();
+
+	QList<QStringQuad> trafficValues = QList<QStringQuad>()
+									   << QStringQuad("1Mb x 1 + 10Mb x 1 + 40Mb x 1",  // class 1
+													  "file-transfer x 1",  // class 2
+													  "1Mb x 4 + 10Mb x 2 + 40Mb x 1 + file-transfer x 1",  // class 1 background
+													  "file-transfer x 1"  // class 2 background
+													  );
+	QList<QInt32List> nonNeutralLinkValues = QList<QInt32List>()
+											 << (QInt32List())
+											 << (QInt32List() << 5 << 14 << 20);
+
+	autoDGenerate(trafficValues, nonNeutralLinkValues, "8ab");
 }

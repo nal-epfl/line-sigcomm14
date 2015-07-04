@@ -78,27 +78,13 @@
                  <property name="bottomMargin">
                   <number>0</number>
                  </property>
-                 <item row="3" column="1">
-                  <widget class="QCheckBox" name="checkAutoDiffSize">
+                 <item row="0" column="8">
+                  <widget class="QPushButton" name="btnAutoPolicingPlot7">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
                    <property name="text">
-                    <string>Diff size</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="8" column="0">
-                  <widget class="QPushButton" name="btnAutoAdNeutralTcp">
-                   <property name="text">
-                    <string>Ad (n, tcp)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="10">
-                  <widget class="QCheckBox" name="checkAutoCustomTraffic">
-                   <property name="text">
-                    <string>Custom traffic</string>
+                    <string>Plot 7 (shaping -&gt; p.cong.)</string>
                    </property>
                   </widget>
                  </item>
@@ -112,204 +98,10 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="2">
-                  <widget class="QCheckBox" name="checkAutoReverseSize">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Reverse size</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="0">
-                  <widget class="QPushButton" name="btnAutoAcNeutralCongestionGap">
-                   <property name="text">
-                    <string>Ac2 (n, congestion gap)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="2">
-                  <widget class="QPushButton" name="btnAutoCaShapingSize">
-                   <property name="text">
-                    <string>Ca (s, size)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="9">
-                  <widget class="QPushButton" name="btnAutoPolicingPlot7b">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Plot 7b (long flows)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="2">
-                  <widget class="QPushButton" name="btnAutoCbShapingRtt">
-                   <property name="text">
-                    <string>Cb (s, RTT)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="1">
-                  <widget class="QPushButton" name="btnAutoBbPolicingRtt">
-                   <property name="text">
-                    <string>Bb (p, RTT)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="11">
-                  <widget class="QComboBox" name="cmbAutoTcp">
-                   <item>
-                    <property name="text">
-                     <string>cubic</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>reno</string>
-                    </property>
-                   </item>
-                  </widget>
-                 </item>
-                 <item row="4" column="0">
-                  <widget class="QPushButton" name="btnAutoAaNeutralSizeGap">
-                   <property name="text">
-                    <string>Aa (n, size gap)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="2">
-                  <widget class="QCheckBox" name="checkAutoDiffRTT">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Diff RTT</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="8" column="1">
                   <widget class="QPushButton" name="btnAutoBdPolicingQoS">
                    <property name="text">
                     <string>Bd (p, qos)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="1">
-                  <widget class="QPushButton" name="btnAutoBaPolicingSize">
-                   <property name="text">
-                    <string>Ba (p, size)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="8">
-                  <widget class="QPushButton" name="btnAutoPolicingPlot7">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Plot 7 (shaping -&gt; p.cong.)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="2">
-                  <widget class="QPushButton" name="btnAuto2All">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>2 all</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="3">
-                  <widget class="QPushButton" name="btnAutoPolicingPlot1c">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Plot 1c (short vs long)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="0">
-                  <widget class="QPushButton" name="btnAutoAbNeutralRttGap">
-                   <property name="text">
-                    <string>Ab (n, RTT gap)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QPushButton" name="btnAutoPolicingPlot2">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Plot 2 (transfer size -&gt; p.cong)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="2">
-                  <widget class="QPushButton" name="btnAutoCcShapingCongestion">
-                   <property name="text">
-                    <string>Cc (s, congestion)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="0">
-                  <widget class="QPushButton" name="btnAutoAcNeutralCongestion">
-                   <property name="text">
-                    <string>Ac (n, congestion)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QPushButton" name="btnAutoPolicingPlot1b">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Plot 1b (long flows)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="8">
-                  <widget class="QPushButton" name="btnAutoPolicingPlot4">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Plot 4 (nflows -&gt; p.cong)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="3">
-                  <widget class="QPushButton" name="btnAutoPolicingPlot3">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Plot 3 (link -&gt; p.cong)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QPushButton" name="btnCoverage">
-                   <property name="text">
-                    <string>Coverage...</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="9">
-                  <widget class="QCheckBox" name="checkAutoNeutral">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Neutral</string>
                    </property>
                   </widget>
                  </item>
@@ -338,10 +130,17 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="3">
-                  <widget class="QPushButton" name="btnAutoCalibrateNone">
+                 <item row="2" column="10">
+                  <widget class="QCheckBox" name="checkAutoCustomTraffic">
                    <property name="text">
-                    <string>Calibrate &quot;none&quot;</string>
+                    <string>Custom traffic</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="1">
+                  <widget class="QPushButton" name="btnAutoBcPolicingCongestion">
+                   <property name="text">
+                    <string>Bc (p, congestion)</string>
                    </property>
                   </widget>
                  </item>
@@ -355,13 +154,116 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="0">
-                  <widget class="QPushButton" name="btnAutoPolicingPlot1">
+                 <item row="4" column="2">
+                  <widget class="QPushButton" name="btnAutoCaShapingSize">
+                   <property name="text">
+                    <string>Ca (s, size)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="11" column="2">
+                  <widget class="QPushButton" name="btnSigcomm7f">
+                   <property name="text">
+                    <string>Sigcomm 7f</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QCheckBox" name="checkAutoDiffRTT">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
                    <property name="text">
-                    <string>Plot 1 (policing -&gt; p.cong.)</string>
+                    <string>Diff RTT</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="10" column="2">
+                  <widget class="QPushButton" name="btnSigcomm7c">
+                   <property name="text">
+                    <string>Sigcomm 7c</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="11" column="1">
+                  <widget class="QPushButton" name="btnSigcomm7e">
+                   <property name="text">
+                    <string>Sigcomm 7e</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QPushButton" name="btnAutoPolicingPlot1b">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Plot 1b (long flows)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="9" column="2">
+                  <widget class="QPushButton" name="btnAutoDcWebFile">
+                   <property name="text">
+                    <string>Dc (web vs file)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QPushButton" name="btnAuto2All">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>2 all</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QCheckBox" name="checkAutoFast">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Fast</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="10" column="1">
+                  <widget class="QPushButton" name="btnSigcomm7b">
+                   <property name="text">
+                    <string>Sigcomm 7b</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QPushButton" name="btnAutoPolicingPlot2">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Plot 2 (transfer size -&gt; p.cong)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="9" column="1">
+                  <widget class="QPushButton" name="btnAutoDbWeb">
+                   <property name="text">
+                    <string>Db (web)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="2">
+                  <widget class="QPushButton" name="btnAutoCcShapingCongestion">
+                   <property name="text">
+                    <string>Cc (s, congestion)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="8" column="2">
+                  <widget class="QPushButton" name="btnAutoCdShapingQoS">
+                   <property name="text">
+                    <string>Cd (s, qos)</string>
                    </property>
                   </widget>
                  </item>
@@ -378,27 +280,61 @@
                    </property>
                   </spacer>
                  </item>
-                 <item row="2" column="1">
-                  <widget class="QCheckBox" name="checkAutoFast">
+                 <item row="5" column="2">
+                  <widget class="QPushButton" name="btnAutoCbShapingRtt">
+                   <property name="text">
+                    <string>Cb (s, RTT)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QPushButton" name="btnAutoAaNeutralSizeGap">
+                   <property name="text">
+                    <string>Aa (n, size gap)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="1">
+                  <widget class="QPushButton" name="btnAutoBbPolicingRtt">
+                   <property name="text">
+                    <string>Bb (p, RTT)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="9">
+                  <widget class="QPushButton" name="btnAutoPolicingPlot7b">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
                    <property name="text">
-                    <string>Fast</string>
+                    <string>Plot 7b (long flows)</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="8" column="2">
-                  <widget class="QPushButton" name="btnAutoCdShapingQoS">
+                 <item row="3" column="1">
+                  <widget class="QCheckBox" name="checkAutoDiffSize">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="text">
-                    <string>Cd (s, qos)</string>
+                    <string>Diff size</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="6" column="1">
-                  <widget class="QPushButton" name="btnAutoBcPolicingCongestion">
+                 <item row="2" column="9">
+                  <widget class="QCheckBox" name="checkAutoNeutral">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="text">
-                    <string>Bc (p, congestion)</string>
+                    <string>Neutral</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QPushButton" name="btnCoverage">
+                   <property name="text">
+                    <string>Coverage...</string>
                    </property>
                   </widget>
                  </item>
@@ -409,17 +345,13 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="9" column="1">
-                  <widget class="QPushButton" name="btnAutoDbWeb">
-                   <property name="text">
-                    <string>Db (web)</string>
+                 <item row="1" column="8">
+                  <widget class="QPushButton" name="btnAutoPolicingPlot4">
+                   <property name="enabled">
+                    <bool>false</bool>
                    </property>
-                  </widget>
-                 </item>
-                 <item row="9" column="2">
-                  <widget class="QPushButton" name="btnAutoDcWebFile">
                    <property name="text">
-                    <string>Dc (web vs file)</string>
+                    <string>Plot 4 (nflows -&gt; p.cong)</string>
                    </property>
                   </widget>
                  </item>
@@ -427,6 +359,123 @@
                   <widget class="QPushButton" name="btnAutoDdWebVideo">
                    <property name="text">
                     <string>Dd (web vs video)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="3">
+                  <widget class="QPushButton" name="btnAutoCalibrateNone">
+                   <property name="text">
+                    <string>Calibrate &quot;none&quot;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="0">
+                  <widget class="QPushButton" name="btnAutoAbNeutralRttGap">
+                   <property name="text">
+                    <string>Ab (n, RTT gap)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="0">
+                  <widget class="QPushButton" name="btnAutoAcNeutralCongestionGap">
+                   <property name="text">
+                    <string>Ac2 (n, congestion gap)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QPushButton" name="btnAutoBaPolicingSize">
+                   <property name="text">
+                    <string>Ba (p, size)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QPushButton" name="btnAutoPolicingPlot3">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Plot 3 (link -&gt; p.cong)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="11" column="0">
+                  <widget class="QPushButton" name="btnSigcomm7d">
+                   <property name="text">
+                    <string>Sigcomm 7d</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="QCheckBox" name="checkAutoReverseSize">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Reverse size</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="0">
+                  <widget class="QPushButton" name="btnAutoAcNeutralCongestion">
+                   <property name="text">
+                    <string>Ac (n, congestion)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QPushButton" name="btnAutoPolicingPlot1c">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Plot 1c (short vs long)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="10" column="0">
+                  <widget class="QPushButton" name="btnSigcomm7a">
+                   <property name="text">
+                    <string>Sigcomm 7a</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QPushButton" name="btnAutoPolicingPlot1">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Plot 1 (policing -&gt; p.cong.)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="8" column="0">
+                  <widget class="QPushButton" name="btnAutoAdNeutralTcp">
+                   <property name="text">
+                    <string>Ad (n, tcp)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="11">
+                  <widget class="QComboBox" name="cmbAutoTcp">
+                   <item>
+                    <property name="text">
+                     <string>cubic</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>reno</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="12" column="0">
+                  <widget class="QPushButton" name="btnSigcomm8ab">
+                   <property name="text">
+                    <string>Sigcomm 8a/b</string>
                    </property>
                   </widget>
                  </item>

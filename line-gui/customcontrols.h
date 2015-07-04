@@ -112,6 +112,21 @@ private slots:
     void on_btnAutoDcWebFile_clicked();
     void on_btnAutoDdWebVideo_clicked();
 
+	void on_btnSigcomm7a_clicked();
+	void loadGraph(QString name);
+
+	void on_btnSigcomm7b_clicked();
+
+	void on_btnSigcomm7c_clicked();
+
+	void on_btnSigcomm7d_clicked();
+
+	void on_btnSigcomm7e_clicked();
+
+	void on_btnSigcomm7f_clicked();
+
+	void on_btnSigcomm8ab_clicked();
+
 private:
     Ui::CustomControls *ui;
     MainWindow *mainWindow;
