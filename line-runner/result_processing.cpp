@@ -501,13 +501,13 @@ bool nonNeutralityAnalysis(QString workingDir, QString graphName, QString experi
                    "<head>\n"
                    "  <meta charset=\"UTF-8\">\n"
                    "  <title>Neutrality Project Plan</title>\n"
-                   "  <link rel=\"shortcut icon\" type=\"image/png\" href=\"/home/ovi/Documents/phd-docs/neutralitytomography/html/plan.png\">\n"
-                   "  <link rel=\"stylesheet\" href=\"/home/ovi/Documents/phd-docs/neutralitytomography/html/style.css\">\n"
+				   "  <link rel=\"shortcut icon\" type=\"image/png\" href=\"../../../html/plan.png\">\n"
+				   "  <link rel=\"stylesheet\" href=\"../../../html/style.css\">\n"
                    "</head>\n"
                    "<body>\n"
                    "<div class=\"section\">\n"
                    "  <h2>Experiment: %1</h2>\n"
-                   "  <img src=\"/home/ovi/Documents/phd-docs/neutralitytomography/html/pegasus.png\"></img>\n"
+				   "  <img src=\"../../../html/pegasus.png\"></img>\n"
                    "  <p>Experiment parameters:\n"
                    "    <ul>\n"
                    "      <li>Non-neutral links: %2</li>\n"
@@ -654,8 +654,8 @@ bool nonNeutralityAnalysis(QString workingDir, QString graphName, QString experi
 
     html += QString("  </div>\n"
                     "</div>\n"
-                    "<script src=\"/home/ovi/Documents/phd-docs/neutralitytomography/html/todo.js\"></script>\n"
-                    "<script src=\"/home/ovi/Documents/phd-docs/neutralitytomography/html/toc.js\"></script>\n"
+					"<script src=\"../../../html/todo.js\"></script>\n"
+					"<script src=\"../../../html/toc.js\"></script>\n"
                     "</body>\n"
                     "</html>\n");
 
@@ -668,7 +668,7 @@ bool nonNeutralityAnalysis(QString workingDir, QString graphName, QString experi
         return false;
 
     QDir::setCurrent(workingDir);
-    QProcess::execute("/home/ovi/src/non-neutrality-experiments-final/plot-edge-class-path-cong-prob.py",
+	QProcess::execute("../../../plotting-scripts-new/plot-edge-class-path-cong-prob.py",
                       QStringList()
                       << "--in"
                       << QString("link-analysis-%1-%2-lossth-%3.txt")
@@ -1544,13 +1544,13 @@ bool nonNeutralityDetection(QString workingDir, QString graphName, QString exper
                    "<head>\n"
                    "  <meta charset=\"UTF-8\">\n"
                    "  <title>Neutrality Project Plan</title>\n"
-                   "  <link rel=\"shortcut icon\" type=\"image/png\" href=\"/home/ovi/Documents/phd-docs/neutralitytomography/html/plan.png\">\n"
-                   "  <link rel=\"stylesheet\" href=\"/home/ovi/Documents/phd-docs/neutralitytomography/html/style.css\">\n"
+				   "  <link rel=\"shortcut icon\" type=\"image/png\" href=\"../../../html/plan.png\">\n"
+				   "  <link rel=\"stylesheet\" href=\"../../../html/style.css\">\n"
                    "</head>\n"
                    "<body>\n"
                    "<div class=\"section\">\n"
                    "  <h2>Experiment: %1</h2>\n"
-                   "  <img src=\"/home/ovi/Documents/phd-docs/neutralitytomography/html/pegasus.png\"></img>\n"
+				   "  <img src=\"../../../html/pegasus.png\"></img>\n"
                    "  <p>Experiment parameters:\n"
                    "    <ul>\n"
                    "      <li>Non-neutral links: %2</li>\n"
@@ -1772,8 +1772,8 @@ bool nonNeutralityDetection(QString workingDir, QString graphName, QString exper
 
     html += QString("  </div>\n"
                     "</div>\n"
-                    "<script src=\"/home/ovi/Documents/phd-docs/neutralitytomography/html/todo.js\"></script>\n"
-                    "<script src=\"/home/ovi/Documents/phd-docs/neutralitytomography/html/toc.js\"></script>\n"
+					"<script src=\"../../../html/todo.js\"></script>\n"
+					"<script src=\"../../../html/toc.js\"></script>\n"
                     "</body>\n"
                     "</html>\n");
 
@@ -1789,7 +1789,7 @@ bool nonNeutralityDetection(QString workingDir, QString graphName, QString exper
         return false;
 
     QDir::setCurrent(workingDir);
-    QProcess::execute("/home/ovi/src/non-neutrality-experiments-final/plot-edge-seq-cong-prob.py",
+	QProcess::execute("../../../plotting-scripts-new/plot-edge-seq-cong-prob.py",
                       QStringList()
                       << "--in"
                       << QString("seq-analysis-%1-%2-bins-%3-lossth-%4-samplings-%5-gapth-%6")
@@ -1807,7 +1807,7 @@ bool nonNeutralityDetection(QString workingDir, QString graphName, QString exper
                       .arg(lossThreshold, 0, 'f', 2)
                       .arg(numSamplingIterations)
                       .arg(gapThreshold));
-    QProcess::execute("/home/ovi/src/non-neutrality-experiments-final/inline-html-images.py", QStringList() << htmlName);
+	QProcess::execute("../../../plotting-scripts-new/inline-html-images.py", QStringList() << htmlName);
 
     return true;
 }
