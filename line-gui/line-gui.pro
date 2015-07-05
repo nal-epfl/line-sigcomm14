@@ -14,7 +14,7 @@ QT += core gui xml svg opengl network testlib
 TARGET = line-gui
 TEMPLATE = app
 
-LIBS += -lglpk -llzma
+LIBS += -lglpk -llzma -lX11
 
 QMAKE_CXXFLAGS += -std=c++0x -Wno-unused-local-typedefs
 
