@@ -2,7 +2,7 @@ This is a snapshot of the repository https://github.com/nal-epfl/line as it was 
 
 An archive with experiment data that reproduces the results is available here: https://github.com/nal-epfl/line-sigcomm14/blob/master/data/sigcomm-experiments-repro-figure-data.tar.xz
 
-# Instructions for reproducing the results from the SIGCOMM article.
+## Instructions for reproducing the results from the SIGCOMM article.
 
 You must follow these steps, which are described in the sections below:
 
