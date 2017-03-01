@@ -1,6 +1,6 @@
-This is a snapshot of the repository https://github.com/nal-epfl/line as it was used in the experiments from our publication Network Neutrality Inference from SIGCOMM 2014.
+This is a snapshot of the repository https://github.com/nal-epfl/line as it was used in the experiments from our publication [Network Neutrality Inference](https://infoscience.epfl.ch/record/186414/files/neutrality_inference.pdf) from SIGCOMM 2014.
 
-An archive with experiment data that reproduces the results is available here: https://github.com/nal-epfl/line-sigcomm14/blob/master/data/sigcomm-experiments-repro-figure-data.tar.xz
+An archive with experiment data that reproduces the results is available here: [data/sigcomm-experiments-repro-figure-data.tar.xz](data/sigcomm-experiments-repro-figure-data.tar.xz)
 
 ## Instructions for reproducing the results from the SIGCOMM article.
 
